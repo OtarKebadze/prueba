@@ -1,5 +1,6 @@
 const express = require("express");
 const producto = require("./productos");
+const mensaje = require("./mensaje")
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -45,4 +46,16 @@ router.delete("/productos", (req, res) => {
   producto.deteleAll().then(() => res.send("ELIMINADO CON EXITO"));
 });
 
+
+//                              MENSAJES
+
+router.get("/mensajes", (req,res)=>{
+  mensaje.allMessages().then(resp=> res.send(resp));
+})
+
+router.post("/mensaje", (req,res)=>{
+  mensaje.saveMessage(req.body).then(()=> res.redirect("/api/"))
+  console.log(req.body)
+  console.log("MENSAJE GUARDADO CORRECTAMENTE")
+})
 module.exports = router;

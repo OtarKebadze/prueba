@@ -66,5 +66,6 @@ class Contenedor {
 }
 const producto = new Contenedor(options, "productos");
 
-producto.createTable().then((resp) => resp);
+// producto.createTable().then((resp) => resp);
+
 module.exports = producto;

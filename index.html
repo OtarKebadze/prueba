@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script src="./mensaje.js"></script>
 </head>
 <body>
 <div class="contenedor">
-    <form class="contenedorForm" action="/api/productos" method="POST" onsubmit="return enviarProducto()">
+    <form class="contenedorForm" action="/api/productos" method="POST">
         <label for="title">PRODUCTO:</label>
         <input type="text" name="title" required>
         <label for="price">PRECIO</label>
@@ -21,12 +19,10 @@
     </form>
 </div>
 <div class="contenedorChat">
-    <form onsubmit ="return enviarMensaje()">
-    <input type="mail" placeholder="Ingrese su Mail"id="mail" required>
-    <input type="text" placeholder="Ingrese texto "id="text" required>
+    <form action="/api/mensaje" method="POST">
+    <input type="mail" placeholder="Ingrese su Mail" name="mail" required>
+    <input type="text" placeholder="Ingrese Texto" name="text" required>
     <button type="submit">ENVIAR MENSAJE</button>
     </form>
-    <div id="mensajes">
-    </div>
 </body>
 </html>
